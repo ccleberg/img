@@ -38,9 +38,9 @@ jobs:
           git lfs install
           git config --global user.email "calibreapp-action@cleberg.net"
           git config --global user.name "calibreapp-action"
-          git branch -a
-          git checkout pull/$PR_NUMBER/merge
-          # git merge $(git log --oneline -n1)
-          git add .
-          git commit -m "calibreapp/image-actions@main"
+          git switch -c img-compressions
+          git switch pull/$PR_NUMBER/merge
+          git merge img-compressions
+          # git add .
+          # git commit -m "calibreapp/image-actions@main"
           git push origin HEAD:$BRANCH_NAME

@@ -39,6 +39,7 @@ jobs:
           git config --global user.email "calibreapp-action@cleberg.net"
           git config --global user.name "calibreapp-action"
           git switch -c img-compressions
+          git branch -a
           git switch pull/$PR_NUMBER/merge
           git merge img-compressions
           # git add .

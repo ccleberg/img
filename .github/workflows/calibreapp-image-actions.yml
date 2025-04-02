@@ -26,7 +26,9 @@ jobs:
           # See https://docs.github.com/en/actions/reference/authentication-in-a-workflow and https://help.github.com/en/articles/virtual-environments-for-github-actions#token-permissions
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install LFS
+      - name: LFS Actions
         run: |
           git lfs install
+          git config --global user.email "calibreapp-action@cleberg.net"
+          git config --global user.name "calibreapp-action"
           git add . && git commit -m "calibreapp/image-actions" && git push

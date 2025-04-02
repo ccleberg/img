@@ -39,5 +39,7 @@ jobs:
           git config --global user.name "calibreapp-action"
           git branch -a
           git checkout pull/$PR_NUMBER/merge
-          git merge $(git log --oneline -n1)
+          # git merge $(git log --oneline -n1)
+          git add .
+          git commit -m "calibreapp/image-actions@main"
           git push

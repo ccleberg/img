@@ -33,6 +33,7 @@ jobs:
       - name: LFS Actions
         env:
             PR_NUMBER: ${{ github.event.number }}
+            BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
           git lfs install
           git config --global user.email "calibreapp-action@cleberg.net"
@@ -42,4 +43,4 @@ jobs:
           # git merge $(git log --oneline -n1)
           git add .
           git commit -m "calibreapp/image-actions@main"
-          git push
+          git push origin HEAD:$BRANCH_NAME

@@ -40,5 +40,6 @@ jobs:
           git config --global user.email "calibreapp-action@cleberg.net"
           git config --global user.name "calibreapp-action"
           git switch -c $BRANCH_NAME
-          git add . & git commit -m "calibreapp/image-actions@main: image optimization"
+          git add .
+          git commit -m "calibreapp/image-actions@main: image optimization"
           git push origin HEAD:$BRANCH_NAME

@@ -1,0 +1,4 @@
+* img
+This repository uses [[https://git-lfs.com/][Git Large File Storage]] to store images used in my projects.
+
+This content was previously served via =https://img.cleberg.net/{img}=. The content is now served from the =https://media.githubusercontent.com/media/ccleberg/img/main/{img}= URI.

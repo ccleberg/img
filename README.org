@@ -1,4 +1,4 @@
 * img
-This repository uses [[https://git-lfs.com/][Git Large File Storage]] to store images used in my projects.
+This repository is used to store images used in my projects. It utilizes [[https://github.com/calibreapp/image-actions][calibreapp/image-actions]] to automatically compress images via pull request prior to merging the images into =main=.
 
-This content was previously served via =https://img.cleberg.net/{img}=. The content is now served from the =https://media.githubusercontent.com/media/ccleberg/img/main/{img}= URI.
+This content was previously served via =https://img.cleberg.net/{img}=. The content is now served from the =https://raw.githubusercontent.com/ccleberg/img/refs/heads/main/{img}= URI.

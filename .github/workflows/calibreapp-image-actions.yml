@@ -42,6 +42,4 @@ jobs:
           git branch -a
           git switch pull/$PR_NUMBER/merge
           git merge img-compressions
-          # git add .
-          # git commit -m "calibreapp/image-actions@main"
           git push origin HEAD:$BRANCH_NAME

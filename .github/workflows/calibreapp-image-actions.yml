@@ -27,10 +27,6 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install LFS
-        run: git lfs install
-
-      - name: Publish
-        uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: |
+          git lfs install
+          git add . && git commit -m "calibreapp/image-actions" && git push

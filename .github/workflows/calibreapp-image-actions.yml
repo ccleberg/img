@@ -33,13 +33,12 @@ jobs:
       - name: LFS Actions
         env:
             PR_NUMBER: ${{ github.event.number }}
-            BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+            # BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+            BRANCH_NAME: pull/$PR_NUMBER/merge
         run: |
           git lfs install
           git config --global user.email "calibreapp-action@cleberg.net"
           git config --global user.name "calibreapp-action"
-          git switch -c img-compressions
-          git branch -a
-          git switch pull/$PR_NUMBER/merge
-          git merge img-compressions
+          git switch -c $BRANCH_NAME
+          git add . & git commit -m "calibreapp/image-actions@main: image optimization"
           git push origin HEAD:$BRANCH_NAME

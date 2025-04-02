@@ -35,4 +35,6 @@ jobs:
           git lfs install
           git config --global user.email "calibreapp-action@cleberg.net"
           git config --global user.name "calibreapp-action"
-          git add . && git commit -m "calibreapp/image-actions" && git push
+          git checkout ${{ github.head_ref || github.ref_name }}
+          git merge $(git log --oneline -n1)
+          git push
